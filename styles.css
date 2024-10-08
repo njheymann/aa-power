@@ -12,7 +12,7 @@ nav {
 
 nav a {
   text-decoration: none;
-  color: #ffffff;
+  color: #f6f6f6;
   position: relative;
   margin: 0 20px;
   font-size: 20px;
@@ -63,26 +63,28 @@ header img {
 
 .text-container {
   display: flex;
-  flex-direction: column;
-  flex: 1;
-  margin-right: 20px;
+  flex-direction: column; /* Stack items vertically */
+  flex: 1; /* Allow it to take available space */
+  margin-right: 20px; /* Space between text and image */
 }
 
 .container h2,
-.container p,
-.container a {
-  flex: 1;
-  margin-right: 20px;
-  flex-direction: column;
+.container p {
+  margin: 0; /* Remove default margin */
+  margin-bottom: 10px; /* Add space below heading and paragraph */
+}
+
+.container button {
+  align-self: flex-start; /* Align the button to the left */
+  margin-top: 10px; /* Add space above the button */
 }
 
 .container img {
-  width: 30%;
-
-  border-radius: 10px;
+  width: 30%; /* Set image width */
+  border-radius: 10px; /* Maintain border radius */
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  margin: 40px;
+  margin: 0; /* Reset margin for consistent spacing */
 }
 
 .what-we-do {
@@ -99,7 +101,7 @@ header img {
 
 .what-we-do i {
   font-size: 50px;
-  color: #fff;
+  color: #f6f6f6;
   padding-top: 20px;
 }
 
@@ -126,4 +128,155 @@ footer {
   align-items: center;
   height: 100px;
   gap: 20px;
+}
+
+footer i:hover {
+  color: #efef09;
+  transition: ease-in-out 1s;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: hsla(0, 0%, 21.96%, 1);
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #f6f6f6;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: "";
+  top: -0.29rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #f6f6f6;
+  border-right: 0.125rem solid #f6f6f6;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: hsla(0, 0%, 21.96%, 1);
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #f6f6f6;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #f6f6f6;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Increase space between form elements */
+  margin: 20px auto; /* Center the form on the page */
+  max-width: 500px; /* Set a maximum width for the form */
+  padding: 20px; /* Add padding inside the form */
+  background-color: #f9f9f9; /* Light background for contrast */
+  border: 1px solid #ddd; /* Subtle border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 10px; /* Inner padding for inputs */
+  border: 1px solid #ccc; /* Border for inputs */
+  border-radius: 5px; /* Rounded corners for inputs */
+  font-size: 16px; /* Increase font size for readability */
+  transition: border-color 0.3s; /* Transition effect on focus */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: hsla(0, 0%, 21.96%, 1); /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+.contact-form button {
+  padding: 10px; /* Inner padding for button */
+  background-color: hsla(0, 0%, 21.96%, 1); /* Button color */
+  color: white; /* Text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners for button */
+  font-size: 16px; /* Increase font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Transition effect on hover */
+}
+
+.contact-form button:hover {
+  background-color: hsla(0, 0%, 21.96%, 1); /* Darker shade on hover */
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: hsla(0, 0%, 21.96%, 1);
+  color: #f6f6f6;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
