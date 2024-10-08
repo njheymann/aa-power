@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
@@ -37,6 +37,30 @@ nav a:hover::after {
   transform: scaleX(1);
 }
 
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    width: 50%;
+  }
+
+  nav a {
+    padding: 10px;
+    text-align: center;
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .contact-info {
+    flex-direction: inherit;
+  }
+
+  .socials {
+    justify-content: center;
+    gap: 100px;
+    font-size: 20px;
+  }
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -56,35 +80,36 @@ header img {
   background-color: #f6f6f6;
   border: #000 1px solid;
   display: flex;
-  height: auto;
+  height: 50%;
   justify-content: space-between;
   padding: 20px;
 }
 
 .text-container {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
-  flex: 1; /* Allow it to take available space */
-  margin-right: 20px; /* Space between text and image */
+  flex-direction: column;
+  flex: 1;
+  margin-right: 20px;
 }
 
 .container h2,
 .container p {
-  margin: 0; /* Remove default margin */
-  margin-bottom: 10px; /* Add space below heading and paragraph */
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .container button {
-  align-self: flex-start; /* Align the button to the left */
-  margin-top: 10px; /* Add space above the button */
+  align-self: flex-start;
+  margin-top: 10px;
 }
 
 .container img {
-  width: 30%; /* Set image width */
-  border-radius: 10px; /* Maintain border radius */
+  width: 40%;
+  height: inherit;
+  border-radius: 5px;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-  margin: 0; /* Reset margin for consistent spacing */
+  margin: 0;
 }
 
 .what-we-do {
@@ -128,6 +153,11 @@ footer {
   align-items: center;
   height: 100px;
   gap: 20px;
+}
+
+footer a {
+  text-decoration: none;
+  color: inherit;
 }
 
 footer i:hover {
@@ -226,48 +256,49 @@ button:hover .button-text {
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Increase space between form elements */
-  margin: 20px auto; /* Center the form on the page */
-  max-width: 500px; /* Set a maximum width for the form */
-  padding: 20px; /* Add padding inside the form */
-  background-color: #f9f9f9; /* Light background for contrast */
-  border: 1px solid #ddd; /* Subtle border */
-  border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  gap: 15px;
+  margin: 20px auto;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 10px; /* Inner padding for inputs */
-  border: 1px solid #ccc; /* Border for inputs */
-  border-radius: 5px; /* Rounded corners for inputs */
-  font-size: 16px; /* Increase font size for readability */
-  transition: border-color 0.3s; /* Transition effect on focus */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: hsla(0, 0%, 21.96%, 1); /* Change border color on focus */
-  outline: none; /* Remove default outline */
+  border-color: hsla(0, 0%, 21.96%, 1);
+  outline: none;
 }
 
 .contact-form button {
-  padding: 10px; /* Inner padding for button */
-  background-color: hsla(0, 0%, 21.96%, 1); /* Button color */
-  color: white; /* Text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners for button */
-  font-size: 16px; /* Increase font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Transition effect on hover */
+  padding: 10px;
+  background-color: hsla(0, 0%, 21.96%, 1);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .contact-form button:hover {
-  background-color: hsla(0, 0%, 21.96%, 1); /* Darker shade on hover */
+  background-color: hsla(0, 0%, 21.96%, 1);
 }
 
 .contact-info {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   gap: 20px;
   padding: 20px;
@@ -275,8 +306,19 @@ button:hover .button-text {
   color: #f6f6f6;
 }
 
+.contact-info a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-info a:hover {
+  color: #efef09;
+  transition: ease-in-out 1s;
+}
+
 .contact-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  background-color: #f6f6f6;
 }
